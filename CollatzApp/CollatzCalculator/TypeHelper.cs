@@ -14,6 +14,10 @@ namespace CollatzCalculator
                 {
                     throw new Exception("Incorrect parameter txtValue, the Input is incorrect!");
                 }
+                if(result==0)
+                {
+                    throw new Exception("Incorrect parameter txtValue, the Input is incorrect! Right values are >0");
+                }
                 yield return result;
             }
         }
