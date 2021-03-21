@@ -19,6 +19,7 @@ namespace CollatzApp
             this.tb_even.Text = NumberOfEven;
             this.tb_Odd.Text = NumberOfOdd;
             this.tb_maxMember.Text = max;
+            this.Dock = DockStyle.Top;
         }
 
     }

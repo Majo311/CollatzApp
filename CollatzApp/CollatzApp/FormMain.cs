@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using CollatzCalculator;
 
@@ -7,6 +8,7 @@ namespace CollatzApp
     public partial class FormMain : Form
     {
         CollatzCalculator.CollatzCalculator collatzCalculator = null;
+        List<Output> OutPuts = new List<Output>();
         public FormMain()
         {
             InitializeComponent();
@@ -20,8 +22,9 @@ namespace CollatzApp
         }
         private void AddResult(CollatzCalculator.CollatzCalculator collatzCalculator )
         {
-            Output output = new Output(collatzCalculator.SequenceValuesAsString, collatzCalculator.NumberOfEven.ToString(), collatzCalculator.NumberOfOdd.ToString(), null);
-            panelOutput.Controls.Add(output);
+            this.OutPuts.Add(new Output(collatzCalculator.SequenceValuesAsString, collatzCalculator.NumberOfEven.ToString(), collatzCalculator.NumberOfOdd.ToString(), null));
+            panelOutput.Controls.Clear();
+            panelOutput.Controls.AddRange(this.OutPuts.ToArray());
         }
     }
 }
