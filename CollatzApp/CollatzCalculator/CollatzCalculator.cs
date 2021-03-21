@@ -8,11 +8,12 @@ namespace CollatzCalculator
 {
     public class CollatzCalculator
     {
-        public List<string> SequenceValues
+         public List<string> SequenceValues
         {
             get;
             private set;
         } = new List<string>();
+        public string SequenceValuesAsString => this.SequenceValues.AsString();
         public uint NumberOfEven
         {
             get;
@@ -23,17 +24,17 @@ namespace CollatzCalculator
             get;
             private set;
         } = 0;
-        public List<uint> InputValue { get; private set; }
+        public List<uint>InputValue { get; private set; }
         public CollatzCalculator(string txtInput)
         {
-            this.InputValue = txtInput.GetDigits().ToList();
+            this.InputValue=txtInput.GetDigits().ToList();
         }
         public void Calculate()
         {
             double result = 0;
-            for (int i = 0; i < this.InputValue.Count; i++)
+            for(int i=0;i<this.InputValue.Count;i++)
             {
-                result += this.InputValue[i] * Math.Pow(10, this.InputValue.Count - 1 - i);
+                result += this.InputValue[i] * Math.Pow(10, this.InputValue.Count-1 - i );
             }
             double sequenceItem = result;
             do

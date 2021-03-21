@@ -17,5 +17,14 @@ namespace CollatzCalculator
                 yield return result;
             }
         }
+        public static string AsString(this IEnumerable<string> SequenceValues)
+        {
+            string result = string.Empty;
+           foreach(string item in SequenceValues)
+           {
+                result += item + ";";
+           }
+            return result;
+        }
     }
 }
