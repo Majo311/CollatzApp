@@ -29,6 +29,10 @@ namespace CollatzCalculator
             get;
             private set;
         } = 0;
+        public uint MaxMembers
+        {
+            get { return this.NumberOfEven + this.NumberOfOdd; }
+        }
         public List<uint>InputValue { get; private set; }
         public CollatzCalculator(string txtInput)
         {

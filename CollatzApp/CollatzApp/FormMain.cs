@@ -30,7 +30,11 @@ namespace CollatzApp
         }
         private void AddResult(CollatzCalculator.CollatzCalculator collatzCalculator )
         {
-            this.OutPuts.Add(new Output(collatzCalculator.InputAsText,collatzCalculator.SequenceValuesAsString, collatzCalculator.NumberOfEven.ToString(), collatzCalculator.NumberOfOdd.ToString(), null));
+            this.OutPuts.Add(new Output(collatzCalculator.InputAsText,
+                                        collatzCalculator.SequenceValuesAsString, 
+                                        collatzCalculator.NumberOfEven.ToString(), 
+                                        collatzCalculator.NumberOfOdd.ToString(), 
+                                        collatzCalculator.MaxMembers.ToString()));
             panelOutput.Controls.Clear();
             panelOutput.Controls.AddRange(this.OutPuts.ToArray());
         }
