@@ -31,14 +31,16 @@ namespace CollatzCalculator
         } = 0;
         public uint MaxMembers
         {
+            //Im not sure if this is right!
             get { return this.NumberOfEven + this.NumberOfOdd; }
         }
         public List<uint>InputValue { get; private set; }
         public CollatzCalculator(string txtInput)
         {
             this.InputAsText = txtInput;
-
+            //get characters as uint digit
             this.InputValue=txtInput.GetDigits().ToList();
+            //check if input is  not zero
             if(this.InputValue.IsInputZero())
             {
                 throw new Exception("Incorrect input! Input have to be >0");
@@ -46,6 +48,8 @@ namespace CollatzCalculator
         }
         public void Calculate()
         {
+            //we are calculating with double values , we have limit 1.7e+308
+            // 8-byte numeric type
             double result = 0;
             for(int i=0;i<this.InputValue.Count;i++)
             {

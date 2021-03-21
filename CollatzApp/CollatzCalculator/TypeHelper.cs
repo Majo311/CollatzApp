@@ -6,6 +6,11 @@ namespace CollatzCalculator
 {
     public static class TypeHelper
     {
+        /// <summary>
+        /// Method GetDigits() returns numeric digits as IEnumerable
+        /// </summary>
+        /// <param name="txtValue"></param>
+        /// <returns></returns>
         public static IEnumerable<uint> GetDigits(this string txtValue)
         {
             uint result;
@@ -18,6 +23,11 @@ namespace CollatzCalculator
                 yield return result;
             }
         }
+        /// <summary>
+        /// AsString method return sequences as one string
+        /// </summary>
+        /// <param name="SequenceValues"></param>
+        /// <returns></returns>
         public static string AsString(this IEnumerable<string> SequenceValues)
         {
             string result = string.Empty;
@@ -28,6 +38,11 @@ namespace CollatzCalculator
             return result;
         }
 
+        /// <summary>
+        /// Method IsInputZero is checking if all input characters aren't zero
+        /// </summary>
+        /// <param name="SequenceValues"></param>
+        /// <returns></returns>
         public static bool IsInputZero(this IEnumerable<uint> SequenceValues)
         {
             List<uint> zeroValues=  SequenceValues.Where(item => item==0).ToList();
