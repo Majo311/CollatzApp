@@ -33,7 +33,12 @@ namespace CollatzCalculator
         public CollatzCalculator(string txtInput)
         {
             this.InputAsText = txtInput;
+
             this.InputValue=txtInput.GetDigits().ToList();
+            if(this.InputValue.IsInputZero())
+            {
+                throw new Exception("Incorrect input! Input have to be >0");
+            }
         }
         public void Calculate()
         {
@@ -59,5 +64,7 @@ namespace CollatzCalculator
             }
             while (sequenceItem != 1);
         }
+
+ 
     }
 }

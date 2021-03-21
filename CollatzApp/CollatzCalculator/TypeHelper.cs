@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CollatzCalculator
 {
@@ -14,10 +15,6 @@ namespace CollatzCalculator
                 {
                     throw new Exception("Incorrect parameter txtValue, the Input is incorrect!");
                 }
-                if(result==0)
-                {
-                    throw new Exception("Incorrect parameter txtValue, the Input is incorrect! Right values are >0");
-                }
                 yield return result;
             }
         }
@@ -29,6 +26,12 @@ namespace CollatzCalculator
                 result += item + ";";
            }
             return result;
+        }
+
+        public static bool IsInputZero(this IEnumerable<uint> SequenceValues)
+        {
+            List<uint> zeroValues=  SequenceValues.Where(item => item==0).ToList();
+            return zeroValues.Count == SequenceValues.ToList().Count ? true : false;
         }
     }
 }
