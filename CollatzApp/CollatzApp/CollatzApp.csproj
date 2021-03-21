@@ -76,5 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CollatzCalculator\CollatzCalculator.csproj">
+      <Project>{c1df3b17-a460-4ab0-956b-c68d64a2377f}</Project>
+      <Name>CollatzCalculator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
