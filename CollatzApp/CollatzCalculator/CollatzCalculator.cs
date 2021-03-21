@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CollatzCalculator
 {
-    public class Class1
+    public class CollatzCalculator
     {
     }
 }
