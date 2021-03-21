@@ -16,9 +16,12 @@ namespace CollatzApp
         {
             this.collatzCalculator = new CollatzCalculator.CollatzCalculator(this.tbInput.Text);
             this.collatzCalculator.Calculate();
-            string sequences = this.collatzCalculator.SequenceValuesAsString;
-
-
+            AddResult(this.collatzCalculator);
+        }
+        private void AddResult(CollatzCalculator.CollatzCalculator collatzCalculator )
+        {
+            Output output = new Output(collatzCalculator.SequenceValuesAsString, collatzCalculator.NumberOfEven.ToString(), collatzCalculator.NumberOfOdd.ToString(), null);
+            panelOutput.Controls.Add(output);
         }
     }
 }
