@@ -12,9 +12,10 @@ namespace CollatzApp
 {
     public partial class Output : UserControl
     {
-        public Output(string Sequences,string NumberOfEven,string NumberOfOdd,string max)
+        public Output(string Input,string Sequences,string NumberOfEven,string NumberOfOdd,string max)
         {
             InitializeComponent();
+            this.tbInput.Text = Input;
             this.tb_Sequence.Text = Sequences;
             this.tb_even.Text = NumberOfEven;
             this.tb_Odd.Text = NumberOfOdd;

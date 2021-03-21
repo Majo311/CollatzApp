@@ -8,7 +8,12 @@ namespace CollatzCalculator
 {
     public class CollatzCalculator
     {
-         public List<string> SequenceValues
+        public string InputAsText
+        {
+            get;
+            private set;
+        }
+        public List<string> SequenceValues
         {
             get;
             private set;
@@ -27,6 +32,7 @@ namespace CollatzCalculator
         public List<uint>InputValue { get; private set; }
         public CollatzCalculator(string txtInput)
         {
+            this.InputAsText = txtInput;
             this.InputValue=txtInput.GetDigits().ToList();
         }
         public void Calculate()
